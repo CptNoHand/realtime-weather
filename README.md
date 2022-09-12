@@ -18,6 +18,7 @@ set weather_latitude 48.85
 set weather_longitude 2.35
 set weather_useFahrenheit true
 set weather_realtimeTime true
+set weather_snow true
 
 ensure realtime-weather
 ```
@@ -27,24 +28,30 @@ The config of this script consists entirely of [convars](https://docs.fivem.net/
 
 All convars can be set using `set <convar name> <convar value>`
 
-|Convar                     |Description                                                                                                            |Default    |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------|-----------|
-|weather_debugMode          |Debug prints in the server console                                                                                     |false      |
-|weather_latitude           |Latitude                                                                                                               |0          |
-|weather_longitude          |Longitude                                                                                                              |0          |
-|weather_presetLocation     |Preset latitude and longitude for: Berlin, Paris, London, Madrid and Amsterdam                                         |"Paris"    |
-|weather_disableSnow        |Disable snow on ground                                                                                                 |false      |
-|weather_disableDynamic     |Disable dynamic weather: only update once an hour.                                                                     |false      |
-|weather_useFahrenheit      |Use fahrenheit for temperature export.                                                                                 |false      |
-|weather_realtimeTime       |Real day and night cycle sync. Works only after relogging or restarting.                                               |false      |
-|weather_updateFrequency    |Weather update frequency. I strongly recommend not to change this number. The current API only updates once an hour.   |600000     |
+| Convar                  | Description                                                                                                              | Default |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------|---------|
+| weather_debugMode       | Debug prints in the server console                                                                                       | false   |
+| weather_snow            | Actually enables snow when it snows in reality                                                                           | false   |
+| weather_latitude        | Latitude                                                                                                                 | 0       |
+| weather_longitude       | Longitude                                                                                                                | 0       |
+| weather_presetLocation  | Preset latitude and longitude for: Berlin, Paris, London, Madrid and Amsterdam                                           | "Paris" |
+| weather_useFahrenheit   | Use fahrenheit for temperature export                                                                                    | false   |
+| weather_updateFrequency | Weather API update frequency. I strongly recommend not to change this number. The current API only updates once an hour. | 600000  |
+| weather_realtimeTime    | Real day and night cycle sync. Works only after relogging or restarting.                                                 | false   |
+
+## Exports
+| Name    | Description                                                                       | Arguments                   |
+|---------|-----------------------------------------------------------------------------------|-----------------------------|
+| setTime | Set the hour and minute for everyone, live blank to automatically resync realtime | hour:number,  minute:number |
+| setWeather | Set the weather for everyone, live blank to automatically resync realweather (you can find weather type at the top of the client.lua) | type:string |
+
 
 ## Planned features
 - [x] ~~More dynamic weather. For example, when it rains, several short showers instead of one hour of rain.~~
 - [ ] Possibility to set different weather location for Cayo Perico.
 - [x] ~~Realistic day and night cycle sync~~.
-- [ ] Option to set a different weather or time via an export. 
-- [ ] Exports to set or freeze weather and time.
-- [x] ~~Convar value to enable or disable snow on the roads.~~
+- [x] ~~Option to set a different weather or time via an export~~. 
+- [x] ~~Exports to set or freeze weather and time~~.
+- [x] ~~Convar value to enable or disable snow on the roads~~.
 - [ ] Possibility of setting a 'personal' time and weather via an export.
 - [ ] More preset locations.
