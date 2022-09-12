@@ -31,6 +31,7 @@ weatherCodes = {
 
 presetLocations = {
 	['berlin'] = { lat = 52.52, long = 13.41 },
+	['dresden'] = { lat = 51.05, long = 13.74 },
 	['paris'] = { lat = 48.85, long = 2.35 },
 	['london'] = { lat = 51.50, long = -0.13 },
 	['madrid'] = { lat = 40.42, long = -3.70 },
